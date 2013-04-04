@@ -1,0 +1,17 @@
+{
+  "author": "Andrei <kezek.ma@gmail.com>",
+  "name": "note-it",
+  "version": "0.0.0",
+  "repository": {
+    "url": ""
+  },
+  "dependencies": {
+    "connect" : "*",
+    "socket.io" : "*"
+    },
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
