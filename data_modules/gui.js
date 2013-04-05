@@ -11,6 +11,9 @@ var gui = {
 	send: function(){
 		console.log('emitting msg');
 		this.socket.emit('msg', {name: 'test', msg: 'test message'});
+	},
+	update: function(data){
+		console.log(data);
 	}
 }
 
