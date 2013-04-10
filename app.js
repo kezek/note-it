@@ -1,20 +1,21 @@
 var connect = require('connect');
 var http = require('http');
 var io = require('socket.io');
-var url = require('url') ;
 var $ = require('jquery');
 
+var template = require('./data_modules/template');
 var gui = require('./data_modules/gui');
 
 const PORT = 8080;
 const NotFoundMessage = 'wtf is dis. go back';
+
 var sourcePublic = 
-		connect()
-			.use(connect.static('public'))
-			.use(function (req, res){
-				console.log('404: ' + req.url);	
-				res.end(NotFoundMessage);
-			});
+  connect()
+  .use(function (req, res){
+    template.load(function (markup){
+      res.end(markup);
+    });  
+  });
 
 var server = http.createServer(sourcePublic);
 server.listen(PORT);
